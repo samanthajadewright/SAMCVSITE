@@ -1,0 +1,239 @@
+/* Universal base styles */
+body, html {
+    font-family: 'Playfair Display', serif; /* Elegant serif typography */
+    margin: 0;
+    padding: 0;
+    color: #2f19ad; /* Modified light purple for better readability */
+    background: url('images/background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background overlay for style and legibility */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker overlay for luxury feel */
+    z-index: 1;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+/* Styling for headers */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: none;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #FFD700; /* Gold color for titles */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Navigation bar enhancements */
+nav .navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background: rgba(23, 20, 38, 0.9); /* Rich purple background for nav */
+    padding: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #FFD700;
+    margin: 0 12px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #FFFFFF;
+    background-color: #6f42c1; /* Purple on hover/focus */
+}
+
+/* Main content styles */
+.section {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent sections */
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Footer adjustments */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #FFD700;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid #FFD700;
+}
+
+/* Styling for interactive elements */
+.accordion-button {
+    background-color: #343a40; /* Dark grey for buttons */
+    color: #FFD700;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #6f42c1;
+    color: rgb(12, 11, 11);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+/* Enhanced link visibility */
+a {
+    color: #FFD700; /* Gold links */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Base setup for the entire page */
+body, html {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    color: #17171b; /* Light purple text for readability */
+    background: url('images/background-image.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    height: 100vh; /* Full height */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Overlay to make the background image less visible and enhance text visibility */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 1; /* Ensures overlay is above the background but below the content */
+}
+
+.wrapper {
+    position: relative;
+    z-index: 2; /* Ensures all text and content is above the overlay */
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 90px 40px;
+    background: none; /* Keeps the header transparent */
+}
+
+header h1 {
+    font-size: 4em;
+    color: #DAA520; /* Gold color for headings */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Enhances readability against backgrounds */
+}
+
+/* Profile picture styling */
+img.img-thumbnail {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #DAA520;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: url('images/profilepic.jpeg') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire element */
+}
+
+/* Navigation bar styling */
+nav .navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for navbar */
+    padding: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #DAA520;
+    margin: 0 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5); /* Slightly see-through for a stylish effect */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #FFFFFF;
+    background-color: #DAA520; /* Changes to gold on hover/focus */
+}
+
+/* Main content section styling */
+.section {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency to show some background */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #DAA520;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 0.9em;
+    border-top: 1px solid #DAA520; /* Subtle top border */
+}
+
+/* Stylish horizontal rule to segment content visually */
+hr {
+    border: none;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #DAA520, transparent);
+    margin-top: 20px;
+}
+
+/* Responsive adjustments for better viewing on mobile devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em; /* Smaller font size for smaller screens */
+    }
+    .section {
+        padding: 20px 10px; /* Less padding on smaller devices */
+    }
+}
+
+/* Enhanced link visibility and interactivity */
+a {
+    color: #FFD700; /* Bright gold for links */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline; /* Standard hover effect to indicate clickable */
+}
