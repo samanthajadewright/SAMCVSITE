@@ -1,283 +1,202 @@
+/* Google Fonts (Cormorant Garamond for headings, Lora for body) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Lora:wght@400&display=swap');
 
-
-
-
-/* Universal base styles */
-body, html {
-    font-family: 'Playfair Display', serif; /* Elegant serif typography */
-    margin: 0;
-    padding: 0;
-    color: #2f19ad; /* Modified light purple for better readability */
-    background: url('images/background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    overflow-x: hidden;
+/* Reset & Base */
+* {
+  box-sizing: border-box;
 }
 
-/* Background overlay for style and legibility */
-.background-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Darker overlay for luxury feel */
-    z-index: 2;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-.wrapper {
-    position: relative;
-    z-index: 3;
+/* Body uses a background image plus an overlay. */
+body {
+  font-family: 'Lora', serif;
+  background: url("images/background-image.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
 }
 
-/* Styling for headers */
-header {
-    text-align: center;
-    padding: 50px 20px;
-    background: none;
+/* The overlay sits above the background image, applying a blur and darkening. */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  backdrop-filter: blur(3px);      /* Subtle blur */
+  z-index: 0;                     /* Behind all content */
 }
 
-/* Enhanced text shadow for headers */
-header h1 {
-    font-size: 3em;
-    color: #f0ca22; /* Rich gold color for titles */
-    text-shadow: 0 0 12px rgba(255, 255, 255, 1); /* Stronger and brighter white glow */
+/* Page container uses flex to push footer to the bottom. */
+.page-container {
+  min-height: 100vh;  /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;         /* Above the overlay */
 }
+
+/* Main content area expands, pushing footer down if content is short/long. */
+main {
+  flex: 1;
+  padding: 80px 20px 40px; /* top space for navbar, etc. */
+}
+
+/* Navbar */
 .navbar {
-    width: 100%;
-    background: #000000;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 15px 0;
-    font-size: larger;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 1rem;
 }
 
+/* Navbar list items */
 .navbar ul {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 2rem; /* More space between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+/* Navbar links */
 .nav-link {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
-    font-size: 1.2em;
+  font-size: 1.1rem;
+  font-family: 'Cormorant Garamond', serif; /* Elegant serif for nav */
+  color: #ffd700; /* Gold text */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
 }
 
-.nav-link:hover, .nav-link.active {
-    background-color: #ffa500;
-    color: #ffffff;
-}
-
-}
-
-.section {
-    text-align: center;
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 90%;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    color: #FFFFFF; /* White text for high contrast */
-    text-shadow: 0 0 12px rgba(255, 255, 255, 1); /* Stronger and brighter white glow */
-    z-index: 3;
-}
-
-
-
-/* Footer styling */
-footer {
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background: #000000;
-    color: white;
-    text-align: center;
-    padding: 25px 0;
-    font-size: 1.2em;
-    z-index: 3; /* Ensures footer is visible above the overlay */
-}
-
-
-/* Styling for interactive elements */
-.accordion-button {
-    background-color: #343a40; /* Dark grey for buttons */
-    color: #FFD700;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: #6f42c1;
-    color: rgb(12, 11, 11);
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-}
-
-/* Enhanced link visibility */
-a {
-    color: #FFD700; /* Gold links */
-}
-a:hover {
-    text-decoration: underline;
-}
-
-
-/* Base setup for the entire page */
-body, html {
-    font-family: 'Merriweather', serif;
-    margin: 0;
-    padding: 0;
-    color: #17171b; /* Light purple text for readability */
-    background: url('images/background-image.jpg') no-repeat center center fixed; 
-    background-size: cover;
-    height: 100vh; /* Full height */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-/* Overlay to make the background image less visible and enhance text visibility */
-.background-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
-    z-index: 1; /* Ensures overlay is above the background but below the content */
-}
-
-.wrapper {
-    position: relative;
-    z-index: 2; /* Ensures all text and content is above the overlay */
+.nav-link:hover,
+.nav-link.active {
+  background-color: #ffd700; /* Gold background on hover/active */
+  color: #000000;
 }
 
 /* Header styling */
 header {
-    text-align: center;
-    padding: 90px 40px;
-    background: none; /* Keeps the header transparent */
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 header h1 {
-    font-size: 4em;
-    color: #DAA520; /* Gold color for headings */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Enhances readability against backgrounds */
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: #ffd700; /* Gold */
+  margin: 0.5em 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Profile picture styling */
-img.img-thumbnail {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 5px solid #DAA520;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background: url('images/profilepic.jpeg') no-repeat center center;
-    background-size: cover; /* Ensures the image covers the entire element */
+header .tagline {
+  font-size: 1.1rem;
+  color: #ffd700;
+  margin-top: -5px;
+  font-style: italic;
 }
 
-/* Navigation bar styling */
-nav .navbar {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for navbar */
-    padding: 0 20px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #DAA520;
-    margin: 0 15px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5); /* Slightly see-through for a stylish effect */
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: #FFFFFF;
-    background-color: #DAA520; /* Changes to gold on hover/focus */
-}
-
+/* Sections */
 .section {
-    text-align: center;
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 90%;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    color: #FFFFFF; /* White text for high contrast */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 1); /* Stronger and brighter white glow */
-    z-index: 5;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 1rem auto;
+  padding: 1.5rem;
+  max-width: 900px;
+  border-radius: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-
-
-
-/* Footer styling */
+/* Footer pinned to bottom if content is short */
 footer {
-    text-align: center;
-    padding: 20px;
-    color: #DAA520;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    font-size: 0.9em;
-    border-top: 1px solid #DAA520; /* Subtle top border */
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;           /* Slightly larger for readability */
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffd700;            /* Gold text */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid #ffd700;
 }
 
-/* Stylish horizontal rule to segment content visually */
-hr {
-    border: none;
-    height: 2px;
-    background-image: linear-gradient(to right, transparent, #DAA520, transparent);
-    margin-top: 20px;
+/* Profile image (if used on home page) */
+.img-thumbnail {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffd700; /* Gold border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive adjustments for better viewing on mobile devices */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em; /* Smaller font size for smaller screens */
-    }
-    .section {
-        padding: 20px 10px; /* Less padding on smaller devices */
-    }
+/* Accordion */
+.accordion {
+  margin-top: 1rem;
 }
 
-/* Enhanced link visibility and interactivity */
-a {
-    color: #FFD700; /* Bright gold for links */
-    text-decoration: none;
+.accordion-item {
+  margin-bottom: 0.5rem;
 }
-a:hover {
-    text-decoration: underline; /* Standard hover effect to indicate clickable */
+
+.accordion-button {
+  width: 100%;
+  background: #444; 
+  color: #ffd700;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  transition: background-color 0.3s;
 }
+
+.accordion-button:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+.accordion-content {
+  display: none; 
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+/* Animated dino on gallery page */
 .dino-container {
-    display: block;
-    margin: 100px auto 20px;
-    width: 33vw;
-    font-size: 15vw;
-    animation: spin 4s linear infinite;
-    text-align: center;
+  display: block;
+  margin: 40px auto;
+  width: 33vw;
+  font-size: 15vw;
+  animation: spin 4s linear infinite;
+  text-align: center;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+  }
+  .section {
+    padding: 1rem;
+  }
 }

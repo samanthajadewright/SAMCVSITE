@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Digital CV</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="description" content="High-end digital portfolio homepage" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Luxury Digital Portfolio</title>
+  <!-- Link to your updated styles.css with pinned footer & blurred overlay -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="background-overlay"></div> <!-- Background overlay for style -->
-
+  <!-- Page container for pinned footer -->
+  <div class="page-container">
+    <!-- Fixed Navbar -->
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="cv.html" class="nav-link">Digital CV</a></li>
-            <li><a href="hobbies.html" class="nav-link">Hobbies</a></li>
-            <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="cv.html" class="nav-link">Digital CV</a></li>
+        <li><a href="hobbies.html" class="nav-link">Hobbies</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+      </ul>
     </nav>
-        <main>
 
-            <header>
-                <h1>Welcome to My Digital CV</h1>
-                <img src="images/profilepic.jpeg" alt="Profile Picture" class="img-thumbnail">
-            </header>
-            <section class="section">
-                <h2>Personal Profile</h2>
-                <p>Proactive Employability Coach and learning and development professional with extensive experience in
-                    recruitment, EDI, and health and well-being initiatives. Currently pursuing a CIPD Level 5 Diploma to
-                    enhance HR & OD skills further. Known for creating inclusive, impactful training that promotes individual and
-                    organisational growth. Passionate about creating an inclusive workplace and engaging working and learning
-                    environment.</p>
-            </section>
-            <!-- Add other sections here -->
-        </main>
-   <footer>
-        Contact me at <a href="mailto:samanthajadewright@gmail.com">samanthajadewright@gmail.com</a> | Connect on <a href="https://www.linkedin.com">LinkedIn</a>
+    <!-- Main content (pushes footer to bottom if short page) -->
+    <main>
+      <header>
+        <h1>Welcome to My Digital Portfolio</h1>
+        <img
+          src="images/profilepic.jpeg"
+          alt="Profile Picture"
+          class="img-thumbnail"
+        />
+      </header>
+
+      <section class="section">
+        <h2>Personal Profile</h2>
+        <p>
+          Proactive Employability Coach and learning &amp; development professional
+          with extensive experience in recruitment, EDI, and health &amp; well-being
+          initiatives. Currently pursuing a CIPD Level 5 Diploma to enhance HR &amp; OD
+          skills further. Known for creating inclusive, impactful training that
+          promotes individual and organisational growth. Passionate about creating
+          an inclusive workplace and engaging working/learning environment.
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer anchored to bottom -->
+    <footer>
+      Contact me at
+      <a href="mailto:samanthajadewright@gmail.com">samanthajadewright@gmail.com</a>
+      | Connect on
+      <a href="https://www.linkedin.com/in/samanthajw/">LinkedIn</a>
     </footer>
+  </div>
+
+  <!-- Optional: Only needed if you have any JS logic to run -->
+  <!-- <script src="script.js"></script> -->
 </body>
 </html>
