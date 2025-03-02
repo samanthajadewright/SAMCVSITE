@@ -1,3 +1,7 @@
+
+
+
+
 /* Universal base styles */
 body, html {
     font-family: 'Playfair Display', serif; /* Elegant serif typography */
@@ -17,13 +21,13 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Darker overlay for luxury feel */
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.1); /* Darker overlay for luxury feel */
+    z-index: 2;
 }
 
 .wrapper {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* Styling for headers */
@@ -33,56 +37,77 @@ header {
     background: none;
 }
 
+/* Enhanced text shadow for headers */
 header h1 {
     font-size: 3em;
-    color: #FFD700; /* Gold color for titles */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    color: #f0ca22; /* Rich gold color for titles */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 1); /* Stronger and brighter white glow */
+}
+.navbar {
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 0;
+    font-size: larger;
 }
 
-/* Navigation bar enhancements */
-nav .navbar {
-    list-style: none;
+.navbar ul {
     display: flex;
-    justify-content: center;
-    background: rgba(23, 20, 38, 0.9); /* Rich purple background for nav */
-    padding: 0 20px;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
     text-decoration: none;
-    color: #FFD700;
-    margin: 0 12px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    color: white;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
 }
 
 .nav-link:hover, .nav-link.active {
-    color: #FFFFFF;
-    background-color: #6f42c1; /* Purple on hover/focus */
+    background-color: #ffa500;
+    color: #ffffff;
 }
 
-/* Main content styles */
+}
+
 .section {
     text-align: center;
     padding: 40px 20px;
     margin: 20px auto;
     max-width: 90%;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent sections */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF; /* White text for high contrast */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 1); /* Stronger and brighter white glow */
+    z-index: 3;
 }
 
-/* Footer adjustments */
+
+
+/* Footer styling */
 footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #000000;
+    color: white;
     text-align: center;
-    padding: 20px;
-    color: #FFD700;
-    font-size: 1em;
-    background: rgba(0, 0, 0, 0.8);
-    border-top: 1px solid #FFD700;
+    padding: 25px 0;
+    font-size: 1.2em;
+    z-index: 3; /* Ensures footer is visible above the overlay */
 }
+
 
 /* Styling for interactive elements */
 .accordion-button {
@@ -191,15 +216,21 @@ nav .navbar {
     background-color: #DAA520; /* Changes to gold on hover/focus */
 }
 
-/* Main content section styling */
 .section {
     text-align: center;
     padding: 40px 20px;
-    margin: 20px 0;
-    background: rgba(255, 255, 255, 0.1); /* Slight transparency to show some background */
+    margin: 20px auto;
+    max-width: 90%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF; /* White text for high contrast */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 1); /* Stronger and brighter white glow */
+    z-index: 5;
 }
+
+
+
 
 /* Footer styling */
 footer {
@@ -236,4 +267,17 @@ a {
 }
 a:hover {
     text-decoration: underline; /* Standard hover effect to indicate clickable */
+}
+.dino-container {
+    display: block;
+    margin: 100px auto 20px;
+    width: 33vw;
+    font-size: 15vw;
+    animation: spin 4s linear infinite;
+    text-align: center;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
